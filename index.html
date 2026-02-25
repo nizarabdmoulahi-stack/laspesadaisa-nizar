@@ -17,7 +17,8 @@ if(localStorage.getItem("cookieConsent") === "accepted"){
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Roboto',sans-serif;color:#111;background:#fff;scroll-behavior:smooth;}
+html, body {min-height:100%; display:flex; flex-direction:column;}
+body{flex:1;font-family:'Roboto',sans-serif;color:#111;background:#fff;scroll-behavior:smooth;}
 a{text-decoration:none;}
 
 /* HEADER ROSSO */
@@ -35,11 +36,7 @@ header{
   background: #e41b17;
   color: white;
 }
-
-header.scrolled{
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
+header.scrolled{box-shadow: 0 2px 10px rgba(0,0,0,0.2);}
 header img{height:60px;}
 nav{display:flex;gap:25px;}
 nav a{color:white;font-weight:700;transition:0.3s;}
@@ -59,12 +56,11 @@ nav a:hover{color:#00a64f;}
 section{padding:80px 20px;max-width:1200px;margin:auto;}
 h2{text-align:center;font-family:'Montserrat',sans-serif;font-size:2.8em;color:#00a64f;margin-bottom:60px;}
 .grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
-.card{overflow:hidden;border-radius:15px;box-shadow:0px 15px 30px rgba(0,0,0,0.1);transition:transform 0.4s,box-shadow 0.4s;background:white;}
+.card{display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden;border-radius:15px;box-shadow:0px 15px 30px rgba(0,0,0,0.1);transition:transform 0.4s,box-shadow 0.4s;background:white;}
 .card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0px 20px 40px rgba(0,0,0,0.2);}
 .card img{width:100%;display:block;}
-.card p{padding:15px;font-weight:700;text-align:center;color:#333;}
+.card p{padding:15px;text-align:center;font-weight:700;color:#333;background:#f5f5f5;}
 section.alt-bg{background:#f5f5f5;border-radius:15px;margin-bottom:50px;}
-.card p {
 
 /* FOOTER */
 footer{background:#00a64f;color:white;display:flex;justify-content:space-around;padding:50px 20px;flex-wrap:wrap;gap:20px;}
@@ -102,8 +98,7 @@ footer a{color:white;font-weight:bold;}
 <section class="hero fade-in">
   <div class="slideshow">
     <div class="slide active"><h1>IL NOSTRO NEGOZIO</h1></div>
- 	
-<div class="slide"><h1>IL NOSTRO NEGOZIO</h1></div>
+    <div class="slide"><h1>IL NOSTRO NEGOZIO</h1></div>
     <div class="slide"><h1>IL NOSTRO NEGOZIO</h1></div>
   </div>
 </section>
@@ -113,7 +108,7 @@ footer a{color:white;font-weight:bold;}
   <div class="grid">
     <div class="card">
       <img src="https://www.foroconsumatori.it/wp-content/uploads/2021/10/foro-alimenti.jpg" alt="Alimentari">
-    <p>Alimentari</p>
+      <p>Alimentari</p>
     </div>
     <div class="card">
       <img src="https://m.media-amazon.com/images/I/61qgZqHV-0L.jpg" alt="Macelleria">
@@ -163,13 +158,14 @@ footer a{color:white;font-weight:bold;}
     </div>
   </div>
 </section>
-  <footer>
+
+<footer>
   <div id="Chi-siamo">
     <h3>Chi siamo</h3>
     <p>Siamo un negozio di prodotti e servizi a Viadana Bresciana (BS).</p>
     <br>
     <p><strong>Orari di apertura:</strong></p>
-      <ul style="list-style:none; padding:0; line-height:1.6;">
+    <ul style="list-style:none; padding:0; line-height:1.6;">
       <li>Lunedì: 07:30–12:30</li>
       <li>Martedì: 07:30–12:30, 15:30–19:30</li>
       <li>Mercoledì: 07:30–12:30, 15:30–19:30</li>
@@ -188,7 +184,7 @@ footer a{color:white;font-weight:bold;}
       <a href="https://www.instagram.com/laspesadaisa/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
     </div>
   </div>
-</footer>  
+</footer>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner">
@@ -214,26 +210,20 @@ footer a{color:white;font-weight:bold;}
 
 <script>
 const cookieBanner = document.getElementById("cookie-banner");
-
 function showBanner(){
   if(!localStorage.getItem("cookieConsent")){
     cookieBanner.style.display = "flex";
   }
 }
-
 function acceptCookies(){
   localStorage.setItem("cookieConsent","accepted");
   location.reload();
 }
-
 function rejectCookies(){
   localStorage.setItem("cookieConsent","rejected");
   cookieBanner.style.display = "none";
 }
-
-function openCookieBanner(){
-  cookieBanner.style.display = "flex";
-}
+function openCookieBanner(){cookieBanner.style.display = "flex";}
 
 /* HEADER SCROLL */
 const header = document.getElementById('header');
@@ -257,8 +247,6 @@ showBanner();
 
 </body>
 </html>
- 
-
 
 
 
