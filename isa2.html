@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Negozio & Spesa</title>
+
+<!-- Google Fonts caricati solo se accettati -->
+<script>
+if(localStorage.getItem("cookieConsent") === "accepted"){
+  const link = document.createElement("link");
+  link.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap";
+  link.rel = "stylesheet";
+  document.head.appendChild(link);
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;color:#111;background:#fff;scroll-behavior:smooth;}
+a{text-decoration:none;}
+
+/* HEADER ROSSO */
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.3s;
+  z-index: 1000;
+  background: #e41b17;
+  color: white;
+}
+
+header.scrolled{
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+header img{height:60px;}
+nav{display:flex;gap:25px;}
+nav a{color:white;font-weight:700;transition:0.3s;}
+nav a:hover{color:#00a64f;}
+
+/* SLIDESHOW */
+.hero{height:100vh;position:relative;overflow:hidden;}
+.slideshow{width:100%;height:100%;position:relative;}
+.slide{position:absolute;width:100%;height:100%;display:flex;justify-content:center;align-items:center;opacity:0;transition:opacity 1s ease-in-out;background-size:cover;background-position:center;color:white;text-align:center;}
+.slide h1{font-family:'Montserrat',sans-serif;font-size:3.5em;text-shadow:2px 2px 15px rgba(0,0,0,0.7);}
+.slide:nth-child(1){background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a') center/cover no-repeat;}
+.slide:nth-child(2){background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url('https://images.unsplash.com/photo-1542838132-92c53300491e') center/cover no-repeat;}
+.slide:nth-child(3){background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url('https://images.unsplash.com/photo-1579113800032-c38bd7635818') center/cover no-repeat;}
+.slide.active{opacity:1;}
+
+/* SEZIONI */
+section{padding:80px 20px;max-width:1200px;margin:auto;}
+h2{text-align:center;font-family:'Montserrat',sans-serif;font-size:2.8em;color:#00a64f;margin-bottom:60px;}
+.grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.card{overflow:hidden;border-radius:15px;box-shadow:0px 15px 30px rgba(0,0,0,0.1);transition:transform 0.4s,box-shadow 0.4s;background:white;}
+.card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0px 20px 40px rgba(0,0,0,0.2);}
+.card img{width:100%;display:block;}
+.card p{padding:15px;font-weight:700;text-align:center;color:#333;}
+section.alt-bg{background:#f5f5f5;border-radius:15px;margin-bottom:50px;}
+
+/* FOOTER */
+footer{background:#00a64f;color:white;display:flex;justify-content:space-around;padding:50px 20px;flex-wrap:wrap;gap:20px;}
+footer div{max-width:400px;text-align:center;}
+footer h3{font-family:'Montserrat',sans-serif;font-size:1.6em;margin-bottom:15px;}
+footer p{font-size:1.1em;}
+footer a{color:white;font-weight:bold;}
+.social-icons{margin-top:10px;}
+.social-icons img{width:30px;height:30px;margin:0 5px;vertical-align:middle;}
+
+/* COOKIE BANNER */
+#cookie-banner{position:fixed;bottom:0;left:0;width:100%;background:#111;color:#fff;padding:25px;display:none;z-index:9999;box-shadow:0 -5px 20px rgba(0,0,0,0.3);font-size:14px;}
+#cookie-banner .cookie-content{max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;}
+#cookie-banner p{flex:1 1 60%;line-height:1.6;}
+#cookie-banner a{color:#00a64f;font-weight:bold;}
+.cookie-buttons{display:flex;gap:10px;}
+.cookie-btn{padding:10px 18px;border:none;cursor:pointer;font-weight:bold;border-radius:5px;}
+.accept-btn{background:#00a64f;color:white;}
+.reject-btn{background:#e41b17;color:white;}
+#cookie-settings{position:fixed;bottom:20px;right:20px;background:#00a64f;color:white;border:none;padding:10px 15px;border-radius:50px;cursor:pointer;font-size:13px;z-index:9998;}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <img src="https://scontent-mxp2-1.xx.fbcdn.net/v/t1.6435-9/136112763_104227068297134_3438713755018764637_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=mLUnhn5jQFUQ7kNvwGsdga6&_nc_oc=AdmVge4DPL-cjNsEfczLiF3Tzu6jEeirGIl4zEDlk_eleODx3gAzG5nTDJsAQEAvPMI&_nc_zt=23&_nc_ht=scontent-mxp2-1.xx&_nc_gid=5y6X3In94tS4s519C804aQ&oh=00_AftAbrzYoTlFOxkQSQhi2Q2AY9X2DgZS5dQorKkqI4xAuA&oe=69C4F3B1" alt="Logo">
+  <nav>
+    <a href="#Prodotti">Prodotti</a>
+    <a href="#Servizi">Servizi</a>
+    <a href="#Chi-siamo">Chi siamo</a>
+    <a href="#Contatti">Contatti</a>
+  </nav>
+</header>
+
+<section class="hero fade-in">
+  <div class="slideshow">
+    <div class="slide active"><h1>IL NOSTRO NEGOZIO</h1></div>
+ 	
+<div class="slide"><h1>IL NOSTRO NEGOZIO</h1></div>
+    <div class="slide"><h1>IL NOSTRO NEGOZIO</h1></div>
+  </div>
+</section>
+
+<section id="Prodotti" class="fade-in alt-bg">
+  <h2>Prodotti</h2>
+  <div class="grid">
+    <div class="card"><img src="https://www.fassa.com/imports/foto-servizi/fassa-coop-center-b224b5b9-120b-523c-b872-fc6c408a64c2/42166/image-thumb__42166__fullscreenHeader/content-dam-org-3-images-full-rights-shopping-fassa-coop-center---supermercato-fassa-coop-center-supermercato-conad-01.jpg"><p>Alimentari</p></div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61qgZqHV-0L.jpg"><p>Macelleria</p></div>
+    <div class="card"><img src="https://www.focus.it/site_stored/imgs/0006/038/frutta-verdura_shutterstock_88218493.1020x680.jpg"><p>Frutta e verdura</p></div>
+    <div class="card"><img src="https://valinapost.it/wp-content/uploads/2017/12/perche-amiamo-cartoleria.jpeg"><p>Cartoleria e cancelleria</p></div>
+    <div class="card"><img src="https://media.gqitalia.it/photos/5e579c08164b2a000896597c/16:9/w_960,c_limit/GettyImages-1055272192.jpg"><p>Gastronomia</p></div>
+  </div>
+</section>
+
+<section id="Servizi" class="fade-in">
+  <h2>Servizi</h2>
+  <div class="grid">
+    <div class="card"><img src="https://laspesaonline.eurospin.it/p/wp-content/uploads/2022/08/consegna-a-casa-logo.png"><p>Consegna a casa</p></div>
+    <div class="card"><img src="https://www.t2000intour.it/wp-content/uploads/2025/03/mooney-qua.webp"><p>Servizio Pagamenti</p></div>
+    <div class="card"><img src="https://st2.depositphotos.com/4441075/11201/v/950/depositphotos_112017764-stock-illustration-novelty-web-icon.jpg"><p>Novita</p></div>
+    <div class="card"><img src="https://isegretidellabellezza.it/wp-content/uploads/2018/06/promozioni2b-e1684408033573.png"><p>Promozioni</p></div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71-dJTB3XiL._AC_SL500_.jpg"><p>Carta fedelta</p></div>
+    <div class="card"><img src="https://www.gedistatic.it/content/gedi/img/huffingtonpost/2025/10/16/132642896-7f0234ad-e34f-469e-9ed1-62e95d8364c4.jpg"><p>HO.RE.CA</p></div>
+  </div>
+</section>
+
+    <footer>
+  <div id="Chi-siamo">
+    <h3>Chi siamo</h3>
+    <p>Siamo un negozio di prodotti e servizi a Viadana Bresciana (BS).</p>
+    <br>
+    <p><strong>Orari di apertura:</strong></p>
+      <ul style="list-style:none; padding:0; line-height:1.6;">
+      <li>Lunedì: 07:30–12:30</li>
+      <li>Martedì: 07:30–12:30, 15:30–19:30</li>
+      <li>Mercoledì: 07:30–12:30, 15:30–19:30</li>
+      <li>Giovedì: 07:30–12:30, 15:30–19:30</li>
+      <li>Venerdì: 07:30–12:30, 15:30–19:30</li>
+      <li>Sabato: 07:30–12:30, 15:30–19:30</li>
+      <li>Domenica: Chiuso</li>
+    </ul>
+  </div>
+  <div id="Contatti">
+    <h3>Contatti</h3>
+    <p>Telefono: +39 333 247 2741</p>
+    <p>Email: info@iltuonegozio.it</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/negoziolaspesadaisa/?locale=it_IT" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/laspesadaisa/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
+    </div>
+  </div>
+</footer>  
+</div>
+
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      Questo sito utilizza cookie tecnici necessari al corretto funzionamento delle pagine
+      e, previo consenso, può utilizzare cookie di terze parti per migliorare
+      l’esperienza di navigazione.  
+      I cookie non vengono utilizzati per finalità di profilazione.  
+      Per maggiori informazioni è possibile consultare la 
+      <a href="privacy.html">Privacy Policy</a> e la 
+      <a href="cookie.html">Cookie Policy</a>.  
+      È possibile accettare o rifiutare l’utilizzo dei cookie.
+    </p>
+    <div class="cookie-buttons">
+      <button class="cookie-btn accept-btn" onclick="acceptCookies()">Accetta</button>
+      <button class="cookie-btn reject-btn" onclick="rejectCookies()">Rifiuta</button>
+    </div>
+  </div>
+</div>
+
+<button id="cookie-settings" onclick="openCookieBanner()">Preferenze Cookie</button>
+
+<script>
+const cookieBanner = document.getElementById("cookie-banner");
+
+function showBanner(){
+  if(!localStorage.getItem("cookieConsent")){
+    cookieBanner.style.display = "flex";
+  }
+}
+
+function acceptCookies(){
+  localStorage.setItem("cookieConsent","accepted");
+  location.reload();
+}
+
+function rejectCookies(){
+  localStorage.setItem("cookieConsent","rejected");
+  cookieBanner.style.display = "none";
+}
+
+function openCookieBanner(){
+  cookieBanner.style.display = "flex";
+}
+
+/* HEADER SCROLL */
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+
+/* SLIDESHOW */
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 4000);
+
+/* MOSTRA BANNER COOKIE ALL'APERTURA */
+showBanner();
+</script>
+
+</body>
+</html>
+ 
