@@ -64,7 +64,13 @@ h2{text-align:center;font-family:'Montserrat',sans-serif;font-size:2.8em;color:#
 .card img{width:100%;display:block;}
 .card p{padding:15px;font-weight:700;text-align:center;color:#333;}
 section.alt-bg{background:#f5f5f5;border-radius:15px;margin-bottom:50px;}
-
+.card p {
+  padding: 15px;
+  text-align: center;  /* centra il testo */
+  font-weight: bold;
+  color: #333;         /* colore del testo */
+  font-size: 1.1em;    /* dimensione del testo */
+}
 /* FOOTER */
 footer{background:#00a64f;color:white;display:flex;justify-content:space-around;padding:50px 20px;flex-wrap:wrap;gap:20px;}
 footer div{max-width:400px;text-align:center;}
@@ -110,26 +116,58 @@ footer a{color:white;font-weight:bold;}
 <section id="Prodotti" class="fade-in alt-bg">
   <h2>Prodotti</h2>
   <div class="grid">
-    <div class="card"><img src="https://www.fassa.com/imports/foto-servizi/fassa-coop-center-b224b5b9-120b-523c-b872-fc6c408a64c2/42166/image-thumb__42166__fullscreenHeader/content-dam-org-3-images-full-rights-shopping-fassa-coop-center---supermercato-fassa-coop-center-supermercato-conad-01.jpg"><p>Alimentari</p></div>
-    <div class="card"><img src="https://m.media-amazon.com/images/I/61qgZqHV-0L.jpg"><p>Macelleria</p></div>
-    <div class="card"><img src="https://www.focus.it/site_stored/imgs/0006/038/frutta-verdura_shutterstock_88218493.1020x680.jpg"><p>Frutta e verdura</p></div>
-    <div class="card"><img src="https://valinapost.it/wp-content/uploads/2017/12/perche-amiamo-cartoleria.jpeg"><p>Cartoleria e cancelleria</p></div>
-    <div class="card"><img src="https://media.gqitalia.it/photos/5e579c08164b2a000896597c/16:9/w_960,c_limit/GettyImages-1055272192.jpg"><p>Gastronomia</p></div>
+    <div class="card">
+      <img src="https://www.fassa.com/imports/foto-servizi/fassa-coop-center-b224b5b9-120b-523c-b872-fc6c408a64c2/42166/image-thumb__42166__fullscreenHeader/content-dam-org-3-images-full-rights-shopping-fassa-coop-center---supermercato-fassa-coop-center-supermercato-conad-01.jpg" alt="Alimentari">
+      <p>Alimentari</p>
+    </div>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61qgZqHV-0L.jpg" alt="Macelleria">
+      <p>Macelleria</p>
+    </div>
+    <div class="card">
+      <img src="https://www.focus.it/site_stored/imgs/0006/038/frutta-verdura_shutterstock_88218493.1020x680.jpg" alt="Frutta e verdura">
+      <p>Frutta e verdura</p>
+    </div>
+    <div class="card">
+      <img src="https://valinapost.it/wp-content/uploads/2017/12/perche-amiamo-cartoleria.jpeg" alt="Cartoleria e cancelleria">
+      <p>Cartoleria e cancelleria</p>
+    </div>
+    <div class="card">
+      <img src="https://media.gqitalia.it/photos/5e579c08164b2a000896597c/16:9/w_960,c_limit/GettyImages-1055272192.jpg" alt="Gastronomia">
+      <p>Gastronomia</p>
+    </div>
   </div>
 </section>
 
 <section id="Servizi" class="fade-in">
   <h2>Servizi</h2>
   <div class="grid">
-    <div class="card"><img src="https://laspesaonline.eurospin.it/p/wp-content/uploads/2022/08/consegna-a-casa-logo.png"><p>Consegna a casa</p></div>
-    <div class="card"><img src="https://www.t2000intour.it/wp-content/uploads/2025/03/mooney-qua.webp"><p>Servizio Pagamenti</p></div>
-    <div class="card"><img src="https://st2.depositphotos.com/4441075/11201/v/950/depositphotos_112017764-stock-illustration-novelty-web-icon.jpg"><p>Novita</p></div>
-    <div class="card"><img src="https://isegretidellabellezza.it/wp-content/uploads/2018/06/promozioni2b-e1684408033573.png"><p>Promozioni</p></div>
-    <div class="card"><img src="https://m.media-amazon.com/images/I/71-dJTB3XiL._AC_SL500_.jpg"><p>Carta fedelta</p></div>
-    <div class="card"><img src="https://www.gedistatic.it/content/gedi/img/huffingtonpost/2025/10/16/132642896-7f0234ad-e34f-469e-9ed1-62e95d8364c4.jpg"><p>HO.RE.CA</p></div>
+    <div class="card">
+      <img src="https://laspesaonline.eurospin.it/p/wp-content/uploads/2022/08/consegna-a-casa-logo.png" alt="Consegna a casa">
+      <p>Consegna a casa</p>
+    </div>
+    <div class="card">
+      <img src="https://www.t2000intour.it/wp-content/uploads/2025/03/mooney-qua.webp" alt="Servizio Pagamenti">
+      <p>Servizio Pagamenti</p>
+    </div>
+    <div class="card">
+      <img src="https://st2.depositphotos.com/4441075/11201/v/950/depositphotos_112017764-stock-illustration-novelty-web-icon.jpg" alt="Novità">
+      <p>Novità</p>
+    </div>
+    <div class="card">
+      <img src="https://isegretidellabellezza.it/wp-content/uploads/2018/06/promozioni2b-e1684408033573.png" alt="Promozioni">
+      <p>Promozioni</p>
+    </div>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71-dJTB3XiL._AC_SL500_.jpg" alt="Carta fedeltà">
+      <p>Carta fedeltà</p>
+    </div>
+    <div class="card">
+      <img src="https://www.gedistatic.it/content/gedi/img/huffingtonpost/2025/10/16/132642896-7f0234ad-e34f-469e-9ed1-62e95d8364c4.jpg" alt="HO.RE.CA">
+      <p>HO.RE.CA</p>
+    </div>
   </div>
 </section>
-
     <footer>
   <div id="Chi-siamo">
     <h3>Chi siamo</h3>
@@ -229,6 +267,7 @@ showBanner();
 </html>
 
  
+
 
 
 
