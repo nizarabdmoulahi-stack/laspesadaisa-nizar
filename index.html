@@ -293,6 +293,21 @@ footer a{color:white;font-weight:bold;}
   margin-top: 40px; /* spazio extra tra prima e seconda riga dei servizi */
 }
 
+/* SEZIONE PRODOTTI - card più vicine tra loro */
+#Prodotti .grid {
+  display: grid;
+  gap: 5px; /* più vicine rispetto a prima */
+  justify-content: center;
+}
+
+#Prodotti .grid:first-child {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#Prodotti .grid:last-child {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 </style>
 </head>
 <body>
@@ -462,6 +477,7 @@ showBanner();
 
 </body>
 </html>
+
 
 
 
