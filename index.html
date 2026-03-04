@@ -142,14 +142,26 @@ footer a{color:white;font-weight:bold;}
   z-index:9998;
 }
 /* Riduce le card nella sezione Servizi */
-#Servizi .grid{
-  grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+#Servizi .grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 200px)); /* più piccole */
   justify-content: center;
+  gap: 20px; /* leggermente più strette */
 }
 
-#Servizi .card img{
-  height:150px;
-  object-fit:cover;
+#Servizi .card {
+  border-radius: 10px; /* leggermente più piccola e compatta */
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.1); /* ombra più leggera */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#Servizi .card img {
+  height: 120px; /* riduci l’altezza dell’immagine */
+  object-fit: cover;
+}
+
+#Servizi .card p {
+  padding: 10px; /* meno padding per compattezza */
+  font-size: 0.9em; /* testo leggermente più piccolo */
 }
 
 </style>
@@ -314,6 +326,7 @@ showBanner();
 
 </body>
 </html>
+
 
 
 
