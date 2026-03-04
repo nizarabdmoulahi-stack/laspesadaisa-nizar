@@ -141,6 +141,17 @@ footer a{color:white;font-weight:bold;}
   font-size:13px;
   z-index:9998;
 }
+/* Riduce le card nella sezione Servizi */
+#Servizi .grid{
+  grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+  justify-content: center;
+}
+
+#Servizi .card img{
+  height:150px;
+  object-fit:cover;
+}
+
 </style>
 </head>
 <body>
@@ -303,6 +314,7 @@ showBanner();
 
 </body>
 </html>
+
 
 
 
