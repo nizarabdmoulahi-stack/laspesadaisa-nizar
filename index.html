@@ -164,6 +164,55 @@ footer a{color:white;font-weight:bold;}
   font-size: 0.9em; /* testo leggermente più piccolo */
 }
 
+/* CARD GENERALE - stesse dimensioni per Prodotti e Servizi */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0px 12px 30px rgba(0,0,0,0.2);
+}
+
+.card img {
+  height: 120px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 10px;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: 700;
+  color: #333;
+}
+
+/* GRID SEZIONE PRODOTTI - 3 sopra, 2 sotto */
+#Prodotti .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 card per riga */
+  gap: 20px;
+  justify-items: center;
+}
+
+#Prodotti .grid:last-child {
+  grid-template-columns: repeat(2, 1fr); /* 2 card per riga sotto */
+}
+
+/* GRID SEZIONE SERVIZI - dimensioni coerenti con Prodotti */
+#Servizi .grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+  justify-content: center;
+  gap: 20px;
+}
+
 </style>
 </head>
 <body>
@@ -188,12 +237,19 @@ footer a{color:white;font-weight:bold;}
 
 <section id="Prodotti" class="fade-in alt-bg">
   <h2>Prodotti</h2>
+
+  <!-- PRIMA RIGA: 3 card -->
   <div class="grid">
-    <div class="card"><img src="https://www.fassa.com/imports/foto-servizi/fassa-coop-center-b224b5b9-120b-523c-b872-fc6c408a64c2/42166/image-thumb__42166__fullscreenHeader/content-dam-org-3-images-full-rights-shopping-fassa-coop-center---supermercato-fassa-coop-center-supermercato-conad-01.jpg"><p>Alimentari</p></div>
-    <div class="card"><img src="https://m.media-amazon.com/images/I/61qgZqHV-0L.jpg"><p>Macelleria</p></div>
-    <div class="card"><img src="https://www.focus.it/site_stored/imgs/0006/038/frutta-verdura_shutterstock_88218493.1020x680.jpg"><p>Frutta e verdura</p></div>
-    <div class="card"><img src="https://valinapost.it/wp-content/uploads/2017/12/perche-amiamo-cartoleria.jpeg"><p>Cartoleria e cancelleria</p></div>
-    <div class="card"><img src="https://media.gqitalia.it/photos/5e579c08164b2a000896597c/16:9/w_960,c_limit/GettyImages-1055272192.jpg"><p>Gastronomia</p></div>
+    <div class="card"><img src="https://www.fassa.com/imports/foto-servizi/fassa-coop-center-b224b5b9-120b-523c-b872-fc6c408a64c2/42166/image-thumb__42166__fullscreenHeader/content-
+    dam-org-3-images-full-rights-shopping-fassa-coop-center---supermercato-fassa-coop-center-supermercato-conad-01.jpg" alt="Alimentari"><p>Alimentari</p></div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61qgZqHV-0L.jpg" alt="Macelleria"><p>Macelleria</p></div>
+    <div class="card"><img src="https://www.focus.it/site_stored/imgs/0006/038/frutta-verdura_shutterstock_88218493.1020x680.jpg" alt="Frutta e verdura"><p>Frutta e verdura</p></div>
+  </div>
+
+  <!-- SECONDA RIGA: 2 card -->
+  <div class="grid">
+    <div class="card"><img src="https://valinapost.it/wp-content/uploads/2017/12/perche-amiamo-cartoleria.jpeg" alt="Cartoleria"><p>Cartoleria e cancelleria</p></div>
+    <div class="card"><img src="https://media.gqitalia.it/photos/5e579c08164b2a000896597c/16:9/w_960,c_limit/GettyImages-1055272192.jpg" alt="Gastronomia"><p>Gastronomia</p></div>
   </div>
 </section>
 
@@ -326,6 +382,7 @@ showBanner();
 
 </body>
 </html>
+
 
 
 
